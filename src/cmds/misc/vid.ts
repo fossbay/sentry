@@ -11,7 +11,7 @@ export const data = new SlashCommandBuilder()
     );
 
 export async function execute(interaction: ChatInputCommandInteraction) {
-    const tiktok_url = interaction.options.getString('vid_url', true);
+    const vid_url = interaction.options.getString('vid_url', true);
 
     // get the video
     const data = await fetch('https://api.quickvids.win/v1/shorturl/create', {
@@ -21,7 +21,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            input_text: tiktok_url,
+            input_text: vid_url,
         }),
     }).then((res) => res.json());
 
