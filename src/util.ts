@@ -6,12 +6,12 @@ export const colors = {
     warning: '#ff9800',
     info: '#2196f3',
     reddit: '#ff4500',
-};
+} as const;
 
 export const emojis = {
     loading:
         'https://cdn.discordapp.com/emojis/451435482073792513.gif?size=240&quality=lossless',
-};
+} as const;
 
 export function isOwner(id: string): boolean {
     return id === process.env.OWNER_ID;
