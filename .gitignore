@@ -131,3 +131,6 @@ dist
 
 # bun
 .env.local
+
+# macOS
+.DS_Store

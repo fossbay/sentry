@@ -10,15 +10,17 @@ import (
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
+
+	_ "github.com/joho/godotenv/autoload"
 )
 
 var (
-	Token   string = "token here"
-	OwnerID string = "owner id here"
+	Token   string = os.Getenv("BOT_TOKEN")
+	OwnerID string = os.Getenv("OWNER_ID")
+	GuildID string = os.Getenv("GUILD_ID")
 )
 
 func main() {
-
 	// Create a new Discord session using the provided bot token.
 	dg, err := discordgo.New("Bot " + Token)
 	if err != nil {
