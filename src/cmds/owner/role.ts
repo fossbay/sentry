@@ -36,9 +36,9 @@ export async function execute(interaction: ChatInputCommandInteraction) {
             ephemeral: true,
         });
     }
-    const action = interaction.options.get('action')?.value as string,
-        role = interaction.options.get('role')?.value as string,
-        user = interaction.options.get('member')?.value as string;
+    const action = interaction.options.get('action')?.value as string;
+    const role = interaction.options.get('role')?.value as string;
+    const user = interaction.options.get('member')?.value as string;
     if (action === 'add') {
         await interaction.guild?.members.cache.get(user)?.roles.add(role);
         await interaction.reply(`Added ${role} to ${user}`);

@@ -27,7 +27,9 @@ const client = Object.assign(
 
 client.commands = new Collection();
 
-const foldersPath = path.join(__dirname, 'cmds');
+const dirname = import.meta.dirname;
+
+const foldersPath = path.join(dirname, 'cmds');
 const commandFolders = fs.readdirSync(foldersPath);
 
 for (const folder of commandFolders) {
@@ -58,7 +60,7 @@ for (const folder of commandFolders) {
     }
 }
 
-const eventsPath = path.join(__dirname, 'events');
+const eventsPath = path.join(dirname, 'events');
 const eventFiles = fs
     .readdirSync(eventsPath)
     .filter(

@@ -13,18 +13,21 @@ export async function execute(interaction: ChatInputCommandInteraction) {
     // microseconds to milliseconds
     // e.g. 1d 2h 3m 4s = 93784 seconds
     // Embedded message with information about Sentry
-    const trueLatency = Math.floor(interaction.client.ws.ping),
-        userCpuUsage = Math.floor(process.cpuUsage().user / 1000),
-        systemCpuUsage = Math.floor(process.cpuUsage().system / 1000),
-        memoryUsage = Math.floor(process.memoryUsage().rss / 1024 / 1024), uptime = Math.floor(process.uptime()),
-        fmtUptime = {
+    const trueLatency = Math.floor(interaction.client.ws.ping);
+    const userCpuUsage = Math.floor(process.cpuUsage().user / 1000);
+    const systemCpuUsage = Math.floor(process.cpuUsage().system / 1000);
+    const memoryUsage = Math.floor(process.memoryUsage().rss / 1024 / 1024);
+    const uptime = Math.floor(process.uptime());
+    const fmtUptime = {
             days: Math.floor(uptime / 86400),
             hours: Math.floor((uptime % 86400) / 3600),
             minutes: Math.floor((uptime % 3600) / 60),
             seconds: Math.floor(uptime % 60),
-        }, uptimeString = `${fmtUptime.days}d ${fmtUptime.hours}h ${fmtUptime.minutes}m ${fmtUptime.seconds}s`,
-        owner = interaction.client.users.cache.get(process.env.OWNER_ID)?.tag,
-        githubLink = 'https://github.com/m1ten/sentry', embed = new EmbedBuilder()
+        };
+    const uptimeString = `${fmtUptime.days}d ${fmtUptime.hours}h ${fmtUptime.minutes}m ${fmtUptime.seconds}s`;
+    const owner = interaction.client.users.cache.get(process.env.OWNER_ID)?.tag;
+    const githubLink = 'https://github.com/m1ten/sentry';
+    const embed = new EmbedBuilder()
             .setColor('#32CD32')
             .setTitle('sentry')
             .setDescription('Information about sentry')

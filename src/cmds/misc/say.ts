@@ -24,11 +24,13 @@ export const data = new SlashCommandBuilder()
     );
 
 export async function execute(interaction: ChatInputCommandInteraction) {
-    const msg = interaction.options.getString('message', true), channelType =
-            interaction.options.getChannel('channel', false) || interaction.channel,
-        channel = interaction.guild?.channels.cache.get(
+    const msg = interaction.options.getString('message', true);
+    const channelType =
+            interaction.options.getChannel('channel', false) || interaction.channel;
+    const channel = interaction.guild?.channels.cache.get(
             channelType?.id as string,
-        ) as TextChannel | undefined, embed = new EmbedBuilder()
+        ) as TextChannel | undefined;
+    const embed = new EmbedBuilder()
             .setColor(util.colors.primary as ColorResolvable)
             .addFields({
                 name: 'say',
