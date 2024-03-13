@@ -137,3 +137,11 @@ dist
 
 # python
 venv/
+
+# Added by cargo (rust)
+
+/target
+
+# python
+__pycache__/
+*.pyc

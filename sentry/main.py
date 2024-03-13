@@ -1,0 +1,1 @@
+print("global level access")
