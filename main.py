@@ -9,6 +9,7 @@ env = dotenv_values(".env")
 intents = discord.Intents.default().all()
 sentry = commands.Bot(command_prefix=".", intents=intents)
 
+
 @sentry.event
 async def on_ready():
     name = sentry.user.name
