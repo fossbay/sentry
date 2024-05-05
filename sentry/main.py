@@ -1,1 +1,0 @@
-print("global level access")

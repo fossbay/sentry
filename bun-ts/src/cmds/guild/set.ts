@@ -1,3 +1,0 @@
-/**
- * UNIVERSAL SET COMMAND
- */
